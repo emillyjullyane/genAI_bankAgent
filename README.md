@@ -7,13 +7,13 @@ O projeto utiliza as seguintes bibliotecas:
 - **langchain** e **langchain-community**: Componentes principais do ecossistema LangChain.  
 - **langchain-google-genai**: Para integrar o modelo Gemini.
 
-### Instalação
+## Instalação
 
 ```bash
 pip install -q "langgraph>=1.0.0" "langchain>=0.3.0" "langchain-community>=0.3.0" "langchain-google-genai>=2.0.0"
 ```
 
-### 🔑 Configuração da API
+## 🔑 Configuração da API
 
 É necessário configurar a chave da API do Google no ambiente:
 ```bash
@@ -22,14 +22,14 @@ GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 from langchain_google_genai import ChatGoogleGenerativeAI
 ```
 
-### Instanciando o LLM
+## Instanciando o LLM
 ```bash
 llm = ChatGoogleGenerativeAI(
     model="gemini-2.5-flash"
 )
 ```
 
-### 💼 Sistema Bancário Simulado
+## 💼 Sistema Bancário Simulado
 O sistema utiliza uma lista de dicionários para simular contas bancárias:
 ```bash
 contas = [
@@ -38,7 +38,7 @@ contas = [
 ]
 ```
 
-### 🔧 Ferramentas (Tools) do Agente
+## 🔧 Ferramentas (Tools) do Agente
 Duas funções Python foram definidas e decoradas como ferramentas (@tool) que o Agente pode utilizar para interagir com o sistema bancário simulado.
 
 1. lista_saldo
@@ -72,7 +72,7 @@ def transferir(de, para, valor):
     return "Transferencia realizada com sucesso!"
 ```
 
-### 🤖 Criação e Configuração do Agente
+## 🤖 Criação e Configuração do Agente
 O agente é criado usando a arquitetura ReAct (Reasoning and Acting) pré-construída do LangGraph.
 
 System Prompt (Instruções do Agente):
@@ -92,7 +92,7 @@ Informações importantes:
 """
 ```
 
-### Instanciando o Agente
+## Instanciando o Agente
 ```bash
 from langgraph.prebuilt import create_react_agent
 
@@ -103,7 +103,7 @@ bank_agent = create_react_agent(
 )
 ```
 
-### 🗣️ Função de Interação com o Agente
+## 🗣️ Função de Interação com o Agente
 Uma camada de proteção inicial (guardrail) bloqueia consultas que mencionem explicitamente "CPF":
 
 ```bash
