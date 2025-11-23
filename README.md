@@ -28,3 +28,13 @@ llm = ChatGoogleGenerativeAI(
     model="gemini-2.5-flash"
 )
 ```
+
+💼 Sistema Bancário Simulado
+
+O sistema utiliza uma lista de dicionários para simular contas bancárias:
+```bash
+contas = [
+    {"nome": "Maria Clara", "cpf": "123.456.789-10", "numeroConta": 1234, "saldo": 200},
+    {"nome": "Emilly", "cpf": "456.789.123-20", "numeroConta": 4321, "saldo": 200},
+]
+```
