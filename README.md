@@ -11,3 +11,20 @@ O projeto utiliza as seguintes bibliotecas:
 
 ```bash
 pip install -q "langgraph>=1.0.0" "langchain>=0.3.0" "langchain-community>=0.3.0" "langchain-google-genai>=2.0.0"
+```
+
+🔑 Configuração da API
+
+É necessário configurar a chave da API do Google no ambiente:
+```bash
+import os
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+from langchain_google_genai import ChatGoogleGenerativeAI
+```
+
+# Instanciando o LLM
+```bash
+llm = ChatGoogleGenerativeAI(
+    model="gemini-2.5-flash"
+)
+```
